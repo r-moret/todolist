@@ -12,6 +12,7 @@ export function Task({ title, description, initialIsFinished }) {
         <article className="task-article">
             <aside className="task-aside">
                 <input 
+                    className="task-checkbox"
                     type="checkbox" 
                     checked={isFinished} 
                     onChange={handleIsFinished}

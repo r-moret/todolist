@@ -15,6 +15,10 @@
     align-items: center;
 }
 
+.task-checkbox {
+    accent-color: #e83b4b;
+}
+
 .task-title {
     font-weight: bold;
     color: #e83b4b;
