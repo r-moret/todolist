@@ -1,7 +1,9 @@
 import { Task } from "../Task/Task.jsx"
+import { NewTask } from "../NewTask/NewTask.jsx"
 import "./TodoList.css"
+import { useState } from "react"
 
-const tasks = [
+const initialTasks = [
   {
     title: "Hacer la compra",
     description: "Ir al supermercado a hacer la compra del mes",
@@ -20,17 +22,23 @@ const tasks = [
 ]
 
 export function TodoList() {
-  return (
-    <div className="todolist-container">
-    {
-        tasks.map((task) => (
-        <Task
-            title={task.title}
-            description={task.description}
-            initialIsFinished={task.finished}
-        />)
-        )
-    }
-    </div> 
-  )
+    const [tasks, setTasks] = useState(initialTasks)
+
+    const handleTasks = task => setTasks([...tasks, task])
+
+    return (
+        <div className="todolist-container">
+            {
+                tasks.map((task) => (
+                <Task
+                    key={task.title}
+                    title={task.title}
+                    description={task.description}
+                    initialIsFinished={task.finished}
+                />)
+                )
+            }
+            <NewTask addTask={handleTasks}/>
+        </div> 
+    )
 }
