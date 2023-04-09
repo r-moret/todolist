@@ -5,18 +5,18 @@ import { useState } from "react"
 
 const initialTasks = [
   {
-    title: "Hacer la compra",
-    description: "Ir al supermercado a hacer la compra del mes",
+    title: "Go to the supermarket",
+    description: "Go to the supermarket and buy the groceries for the current month",
     finished: false,
   },
   {
-    title: "Ordenar los cajones",
-    description: "Limpiar y ordenar los cajones de la estanteria antigua",
+    title: "Tidy up the kids room",
+    description: "Clean and tidy up the kids room. The carpet has to be removed",
     finished: true,
   },
   {
-    title: "Reparar la rueda del coche",
-    description: "Buscar un mecanico que pueda reparar la rueda del coche antes de las 6",
+    title: "Fix the car tire",
+    description: "Find a mechanic who can fix my tire before 6PM",
     finished: false,
   },
 ]

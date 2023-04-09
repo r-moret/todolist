@@ -22,7 +22,7 @@ export function NewTask({ addTask }) {
             setDescription("")
         }
     }
-    const titlePlaceholder = "Enter a new title..."
+    const titlePlaceholder = "Enter a new task..."
     const descriptionPlaceholder = "Enter the description for the new task..."
 
     return (
