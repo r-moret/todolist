@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./NewTask.css"
+import "../Task/Task.css"
 
 export function NewTask({ addTask }) {
     const [title, setTitle] = useState("")
@@ -22,11 +23,13 @@ export function NewTask({ addTask }) {
             <button onClick={handleNewTask}>Add</button>             
             <header className="task-header">
                 <input 
+                    className="newtask-input newtask-title task-title"
                     placeholder={titlePlaceholder} 
                     onChange={handleTitle}
                     value={title}
                 />
                 <input 
+                    className="newtask-input newtask-description task-description"
                     placeholder={descriptionPlaceholder} 
                     onChange={handleDescription}
                     value={description}

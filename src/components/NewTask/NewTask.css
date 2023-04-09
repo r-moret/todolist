@@ -1,0 +1,20 @@
+.newtask-input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: large;
+    font-family: system-ui;
+    width: 100%;
+    display: block;
+    opacity: 0.85;
+    font-style: italic;
+}
+
+.newtask-title::placeholder {
+    font-weight: bold;
+    color: #e83b4b;
+}
+
+.newtask-description::placeholder {
+    color: #fff;
+}
