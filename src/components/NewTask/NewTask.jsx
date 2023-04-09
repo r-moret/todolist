@@ -1,6 +1,7 @@
 import { useState } from "react"
 import "./NewTask.css"
 import "../Task/Task.css"
+import { AddIcon } from "../AddIcon/AddIcon"
 
 export function NewTask({ addTask }) {
     const [title, setTitle] = useState("")
@@ -20,7 +21,11 @@ export function NewTask({ addTask }) {
 
     return (
         <article className="task-article">
-            <button onClick={handleNewTask}>Add</button>             
+            <aside className="task-aside">
+                <button className="task-icon-button" onClick={handleNewTask}>
+                    <AddIcon />
+                </button>             
+            </aside>
             <header className="task-header">
                 <input 
                     className="newtask-input newtask-title task-title"

@@ -1,23 +1,29 @@
 .task-article {
     display: flex;
-    gap: 14px;
     border-bottom: 2px solid #fff;
-    padding: 4px 10px;
 }
 
 .task-header {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 4px 15px 4px 5px;
 }
 
 .task-aside {
     display: flex;
     align-items: center;
+    justify-content: center;
+    min-width: 60px;
 }
 
-.task-checkbox {
-    accent-color: #e83b4b;
+.task-icon-button {
+    background: none;
+    border: none;
+}
+
+.task-icon-button:hover{
+    opacity: 0.65;
 }
 
 .task-title {

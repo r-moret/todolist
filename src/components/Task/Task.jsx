@@ -1,5 +1,7 @@
 import { useState } from "react"
 import "./Task.css"
+import { UncheckedIcon } from "../UncheckedIcon/UncheckedIcon.jsx"
+import { CheckedIcon } from "../CheckedIcon/CheckedIcon.jsx"
 
 export function Task({ title, description, initialIsFinished }) {
     const [isFinished, setIsFinished] = useState(initialIsFinished)
@@ -11,12 +13,9 @@ export function Task({ title, description, initialIsFinished }) {
     return (
         <article className="task-article">
             <aside className="task-aside">
-                <input 
-                    className="task-checkbox"
-                    type="checkbox" 
-                    checked={isFinished} 
-                    onChange={handleIsFinished}
-                />
+                <button className="task-icon-button" onClick={handleIsFinished}>
+                    { isFinished ?  <CheckedIcon /> : <UncheckedIcon /> }
+                </button>
             </aside>
             <header className="task-header">
                 <span className={titleClassName}>{title}</span>
