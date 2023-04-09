@@ -10,12 +10,18 @@ export function NewTask({ addTask }) {
     const handleTitle = title => setTitle(title.target.value)
     const handleDescription = description => setDescription(description.target.value)
     
-    const handleNewTask = () => addTask({ 
-        title: title, 
-        description: description, 
-        finished: false 
-    })
-
+    const handleNewTask = () => {
+        if (title && description) {
+            addTask({ 
+                title: title, 
+                description: description, 
+                finished: false 
+            })
+    
+            setTitle("")
+            setDescription("")
+        }
+    }
     const titlePlaceholder = "Enter a new title..."
     const descriptionPlaceholder = "Enter the description for the new task..."
 
