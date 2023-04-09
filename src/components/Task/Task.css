@@ -1,0 +1,30 @@
+.task-article {
+    display: flex;
+    gap: 14px;
+    border-bottom: 2px solid #fff;
+    padding: 4px 10px;
+}
+
+.task-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-aside {
+    display: flex;
+    align-items: center;
+}
+
+.task-title {
+    font-weight: bold;
+    color: #e83b4b;
+}
+
+.task-description {
+    color: #fff;
+}
+
+.finished {
+    opacity: 0.4;
+    text-decoration:line-through;
+}
