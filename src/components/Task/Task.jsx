@@ -3,10 +3,16 @@ import "./Task.css"
 import { UncheckedIcon } from "../UncheckedIcon/UncheckedIcon.jsx"
 import { CheckedIcon } from "../CheckedIcon/CheckedIcon.jsx"
 
-export function Task({ title, description, initialIsFinished }) {
-    const [isFinished, setIsFinished] = useState(initialIsFinished)
+export function Task({ index, title, description, isFinished, updateTask }) {
+    const handleIsFinished = () => {
+        const newTask = {
+            title: title,
+            description: description,
+            finished: !isFinished
+        }
 
-    const handleIsFinished = () => setIsFinished(!isFinished)
+        updateTask(newTask, index)
+    }
     const titleClassName = isFinished ? "task-title finished" : "task-title"
     const descriptionClassName = isFinished ? "task-description finished" : "task-description"
 

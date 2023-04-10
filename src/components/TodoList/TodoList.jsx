@@ -3,42 +3,42 @@ import { NewTask } from "../NewTask/NewTask.jsx"
 import "./TodoList.css"
 import { useState } from "react"
 
-const initialTasks = [
-  {
-    title: "Go to the supermarket",
-    description: "Go to the supermarket and buy the groceries for the current month",
-    finished: false,
-  },
-  {
-    title: "Tidy up the kids room",
-    description: "Clean and tidy up the kids room. The carpet has to be removed",
-    finished: true,
-  },
-  {
-    title: "Fix the car tire",
-    description: "Find a mechanic who can fix my tire before 6PM",
-    finished: false,
-  },
-]
-
 export function TodoList() {
-    const [tasks, setTasks] = useState(initialTasks)
+    const [tasks, setTasks] = useState(() => {
+      const tasksFromStorage = window.localStorage.getItem("tasks")
 
-    const handleTasks = task => setTasks([...tasks, task])
+      if (tasksFromStorage) return JSON.parse(tasksFromStorage)
+      return []
+    })
+
+    const addTask = task => {
+      const newTasks = [...tasks, task]
+      setTasks(newTasks)
+      window.localStorage.setItem("tasks", JSON.stringify(newTasks))
+    }
+
+    const updateTask = (task, index) => {
+      const newTasks = [...tasks]
+      newTasks[index] = task
+      setTasks(newTasks)
+      window.localStorage.setItem("tasks", JSON.stringify(newTasks))
+    }
 
     return (
         <div className="todolist-container">
             {
-                tasks.map((task) => (
+              tasks.map((task, index) => (
                 <Task
+                    index={index}
                     key={task.title}
                     title={task.title}
                     description={task.description}
-                    initialIsFinished={task.finished}
-                />)
-                )
+                    isFinished={task.finished}
+                    updateTask={updateTask}
+                />
+              ))
             }
-            <NewTask addTask={handleTasks}/>
+            <NewTask addTask={addTask}/>
         </div> 
     )
 }
