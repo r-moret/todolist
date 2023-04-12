@@ -4,3 +4,22 @@
     gap: 17px;
     width: 50%;
 }
+
+@media (max-width: 1400px) {
+    .todolist-container {
+        width: 65%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .todolist-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 450px) {
+    .todolist-container {
+        width: 92.5%;
+    }
+}
