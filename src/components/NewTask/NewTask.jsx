@@ -10,7 +10,7 @@ export function NewTask({ addTask }) {
     const handleTitle = title => setTitle(title.target.value)
     const handleDescription = description => setDescription(description.target.value)
     
-    const handleNewTask = () => {
+    const handleClick = () => {
         if (title && description) {
             addTask({ 
                 title: title, 
@@ -28,7 +28,7 @@ export function NewTask({ addTask }) {
     return (
         <article className="task-article">
             <aside className="task-aside">
-                <button className="task-icon-button" onClick={handleNewTask}>
+                <button className="task-icon-button" onClick={handleClick}>
                     <AddIcon />
                 </button>             
             </aside>
